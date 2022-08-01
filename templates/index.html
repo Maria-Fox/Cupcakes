@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupcakes</title>
+    <link rel="stylesheet" href="/static/cupcake.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Cookie&family=Courgette&family=Dancing+Script&family=Fjalla+One&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Cupcakes</h1>
+    <ul id="cupcake-list">
+      <!-- {%for cupcake in cupcakes%}
+     <ul>
+       <li id="{{cupcake.id}}">
+        Flavor: {{cupcake.flavor}}, Size: {{cupcake.size}}, Rating:
+        {{cupcake.rating}}
+        <img src="{{cupcake.image_url}}" alt="{{cupcake.id}}_image">
+      </li>
+      {%endfor%} -->
+    </ul>
+
+    <form action="/api/cupcakes" id="cupcake-form">
+      <h2>Add a Cupcake</h2>
+      <label for="flavor"
+        >Flavor
+        <input
+          type="text"
+          name="flavor"
+          id="flavor"
+          placeholder="Vanilla"
+          required
+        />
+      </label>
+      <label for="size"
+        >Size
+        <input type="text" name="size" id="size" placeholder="Small" required />
+      </label>
+      <label for="rating"
+        >Rating
+        <input
+          type="text"
+          placeholder="5"
+          name="rating"
+          id="rating"
+          placeholder="small"
+          required
+        />
+      </label>
+      <label for="image_url"
+        >Image Url
+        <input
+          type="text"
+          name="image_url"
+          id="image_url"
+          placeholder="https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3VwY2FrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        />
+      </label>
+      <br />
+      <br />
+      <button type="submit">Add Cupcake</button>
+    </form>
+    <!-- Adding in axios for requests, jquery, and JS page -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/cupcake.js"></script>
+  </body>
+</html>

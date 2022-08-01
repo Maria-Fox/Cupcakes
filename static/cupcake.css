@@ -1,0 +1,30 @@
+body {
+  background-image: linear-gradient(
+    rgba(205, 135, 219, 0.959),
+    rgb(249, 246, 250)
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Courgette", cursive;
+}
+
+h1 {
+  font-size: 3rem;
+  text-decoration-line: underline;
+  text-align: center;
+}
+
+img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+#cupcake-form {
+  /* border: solid 3px rgba(184, 78, 206, 0.959); */
+  border: solid, 3px, rgb(249, 246, 250);
+  padding: 12px;
+  text-align: center;
+}
