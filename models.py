@@ -9,7 +9,7 @@ def connect_db(app):
   db.app = app
   db.__init__(app)
 
-default_img = "https://tinyurl.com/demo-cupcake"
+default_img = "https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3VwY2FrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
 
 
 class Cupcake(db.Model):

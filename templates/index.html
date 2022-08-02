@@ -15,18 +15,11 @@
   </head>
   <body>
     <h1>Cupcakes</h1>
-    <ul id="cupcake-list">
-      <!-- {%for cupcake in cupcakes%}
-     <ul>
-       <li id="{{cupcake.id}}">
-        Flavor: {{cupcake.flavor}}, Size: {{cupcake.size}}, Rating:
-        {{cupcake.rating}}
-        <img src="{{cupcake.image_url}}" alt="{{cupcake.id}}_image">
-      </li>
-      {%endfor%} -->
-    </ul>
+    <div id="list-div">
+      <ul id="cupcake-list"></ul>
+    </div>
 
-    <form action="/api/cupcakes" id="cupcake-form">
+    <form action="/api/cupcakes" id="cupcake-form" method="post">
       <h2>Add a Cupcake</h2>
       <label for="flavor"
         >Flavor
@@ -54,18 +47,19 @@
         />
       </label>
       <label for="image_url"
-        >Image Url
+        >Image URL
         <input
-          type="text"
+          type="image_url"
           name="image_url"
           id="image_url"
-          placeholder="https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3VwY2FrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          placeholder="URL here"
         />
       </label>
       <br />
       <br />
       <button type="submit">Add Cupcake</button>
     </form>
+
     <!-- Adding in axios for requests, jquery, and JS page -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

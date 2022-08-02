@@ -24,7 +24,7 @@ def serialize(self):
     "flavor": self.flavor,
     "size": self.size,
     "rating": self.rating,
-    "image": self.image_url
+    "image_url": self.image_url
   }
 
 @app.route("/")
@@ -52,7 +52,7 @@ def create_cupcake():
     rating = request.json["rating"]
     image_url = request.json["image_url"]
 
-    new_cupcake = Cupcake(flavor = flavor, size = size, rating = rating, image_ur= image_url)
+    new_cupcake = Cupcake(flavor = flavor, size = size, rating = rating, image_url= image_url or None)
 
     db.session.add(new_cupcake)
     db.session.commit()
@@ -60,9 +60,9 @@ def create_cupcake():
     return jsonify(cupcake = serialize(new_cupcake))
 
 
-@app.route("/api/cupckaes/<int: id>")
+@app.route("/api/cupckaes/<int:id>")
 def get_cupcake(id):
-    '''Get data from given cupcake'''
+    '''Get data for given cupcake'''
 
     cupcake = Cupcake.query.get_or_404(id)
     serialized_cupcake = serialize(cupcake)
@@ -93,7 +93,8 @@ def delete_cupcake(id):
     '''Delete cupcake correspponding w/ given id.'''
 
     cupcake = Cupcake.query.get_or_404(id)
-    db.session.delet(cupcake)
+    db.session.delete(cupcake)
+    db.session.commit()
 
     return jsonify(message = {"Deleted": "cupcake"})
 
